@@ -5,7 +5,7 @@ import { useLanguage } from "./LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { Wallet, QrCode, Copy, Check, X } from "lucide-react";
 
-const TON_WALLET_ADDRESS = "EQD__________________________________________";
+const TON_WALLET_ADDRESS = "UQCYToGsIma1Zj49KEgGfB9l5a7yBoaC9f1nDlt7GMNLlDdA";
 
 export default function PaymentMethods() {
   const { t } = useLanguage();
