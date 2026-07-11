@@ -1,10 +1,17 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ 
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
   variable: "--font-jakarta"
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair"
 });
 
 export const metadata = {
@@ -18,9 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={jakarta.variable}>
-      <body className="min-h-screen font-sans relative overflow-x-hidden selection:bg-slate-200 selection:text-slate-900 text-slate-800 bg-slate-50">
-        <div className="fixed inset-0 z-[-1] bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+    <html lang="id" className={`${jakarta.variable} ${playfair.variable}`}>
+      <body className="min-h-screen font-sans bg-white text-slate-800 overflow-x-hidden">
         {children}
       </body>
     </html>
