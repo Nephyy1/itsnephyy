@@ -20,7 +20,7 @@ export default function Header() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.4 }}
-        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-md border border-violet-200/60 text-violet-800 text-xs font-bold mb-10 shadow-[0_4px_20px_-4px_rgba(139,92,246,0.25)]"
+        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-violet-200/60 text-violet-800 text-xs font-bold mb-10 shadow-[0_4px_20px_-4px_rgba(139,92,246,0.25)]"
       >
         <Sparkles className="w-4 h-4 text-violet-600" />
         <span>{t.badge}</span>
@@ -31,14 +31,14 @@ export default function Header() {
           whileHover={{ scale: 1.05, rotate: -2 }}
           className="relative group cursor-pointer"
         >
-          <div className="absolute -inset-1.5 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-sky-500 rounded-2xl blur-md opacity-40 group-hover:opacity-75 transition duration-500 animate-pulse-slow"></div>
-          <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center shadow-2xl border border-slate-700/50">
-            <Store className="w-10 h-10 text-white drop-shadow-md" />
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-sky-400 rounded-2xl blur-md opacity-40 group-hover:opacity-75 transition duration-500 animate-pulse-slow"></div>
+          <div className="relative w-20 h-20 rounded-2xl bg-white flex items-center justify-center shadow-xl border border-white/80">
+            <Store className="w-10 h-10 text-violet-600" />
           </div>
         </motion.div>
         
         <div className="relative">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 drop-shadow-sm">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-800 drop-shadow-sm">
             Nephyy <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-indigo-500 to-sky-500">Store</span>
           </h1>
         </div>
