@@ -38,8 +38,9 @@ export default function Header() {
         </motion.div>
         
         <div className="relative">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-800 drop-shadow-sm">
-            Nephyy <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-indigo-500 to-sky-500">Store</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter drop-shadow-sm">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-fuchsia-500">Nephyy</span>{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600">Store</span>
           </h1>
         </div>
       </div>
