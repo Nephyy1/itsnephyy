@@ -2,7 +2,8 @@
 
 import { useLanguage } from "./LanguageContext";
 import { motion } from "framer-motion";
-import { MessageCircle, Send, Headphones } from "lucide-react";
+import { Headphones } from "lucide-react";
+import { WhatsAppIcon, TelegramIcon } from "./BrandIcons";
 
 export default function QuickActions() {
   const { t } = useLanguage();
@@ -29,21 +30,21 @@ export default function QuickActions() {
 
         <div className="flex items-center gap-3 w-full md:w-auto shrink-0 z-10">
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6281533331355"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs md:text-sm transition-all shadow-lg shadow-emerald-500/20"
+            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#25D366] hover:bg-[#1ea952] text-white font-bold text-xs md:text-sm transition-all shadow-lg shadow-[#25D366]/20"
           >
-            <MessageCircle className="w-4 h-4 fill-white/20" />
+            <WhatsAppIcon className="w-4 h-4" />
             <span>{t.orderWa}</span>
           </a>
           <a
-            href="https://t.me/username"
+            href="https://t.me/zxeexoxee"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs md:text-sm transition-all shadow-lg shadow-sky-500/20"
+            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#2AABEE] hover:bg-[#2289bf] text-white font-bold text-xs md:text-sm transition-all shadow-lg shadow-[#2AABEE]/20"
           >
-            <Send className="w-4 h-4 fill-white/20" />
+            <TelegramIcon className="w-4 h-4" />
             <span>{t.orderTele}</span>
           </a>
         </div>
