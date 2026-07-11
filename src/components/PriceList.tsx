@@ -1,94 +1,127 @@
 "use client";
 
-import { useState } from "react";
 import { useLanguage } from "./LanguageContext";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Code2, Smartphone, Lock } from "lucide-react";
+import { motion } from "framer-motion";
+import { Bot, Smartphone, CheckCircle2, Lock, MessageCircle, Send } from "lucide-react";
 
 export default function PriceList() {
   const { t } = useLanguage();
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    setOpenAccordion(openAccordion === index ? null : index);
-  };
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4, duration: 0.6 }}
-      className="w-full max-w-md mx-auto px-4 mb-10"
-    >
-      <h2 className="text-xl font-bold text-slate-800 mb-4 px-1 flex items-center gap-2">
-        <span className="w-2 h-6 bg-violet-600 rounded-full inline-block"></span>
-        {t.priceListTitle}
-      </h2>
-
-      <div className="flex flex-col gap-4">
-        <div className="glass-card rounded-2xl overflow-hidden transition-all duration-300">
-          <div className="bg-violet-500/10 px-5 py-2.5 border-b border-violet-100 flex items-center gap-2 text-violet-900 font-semibold text-xs uppercase tracking-wider">
-            <Code2 className="w-4 h-4 text-violet-600" />
-            <span>{t.cat1Title}</span>
-          </div>
-          
-          <div 
-            onClick={() => toggleAccordion(1)}
-            className="p-5 flex items-center justify-between cursor-pointer hover:bg-white/50 transition-colors"
-          >
-            <div>
-              <h3 className="font-bold text-slate-800 text-base">{t.cat1Item}</h3>
-              <p className="text-violet-600 font-extrabold text-sm mt-1">{t.cat1Price}</p>
-            </div>
-            <motion.div
-              animate={{ rotate: openAccordion === 1 ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="w-8 h-8 rounded-full bg-violet-50 flex items-center justify-center text-violet-600"
-            >
-              <ChevronDown className="w-5 h-5" />
-            </motion.div>
-          </div>
-
-          <AnimatePresence>
-            {openAccordion === 1 && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="px-5 pb-5 pt-1 text-sm text-slate-600 border-t border-slate-100/60 bg-white/30">
-                  {t.cat1Desc}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        <div className="glass-card rounded-2xl overflow-hidden opacity-75 grayscale-[30%] select-none border-dashed border-slate-300">
-          <div className="bg-slate-500/10 px-5 py-2.5 border-b border-slate-200 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-slate-700 font-semibold text-xs uppercase tracking-wider">
-              <Smartphone className="w-4 h-4 text-slate-500" />
-              <span>{t.cat2Title}</span>
-            </div>
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300 shadow-sm animate-pulse">
-              <Lock className="w-2.5 h-2.5" />
-              {t.comingSoon}
-            </span>
-          </div>
-
-          <div className="p-5 flex items-center justify-between cursor-not-allowed">
-            <div>
-              <h3 className="font-bold text-slate-600 text-base">{t.cat2Item}</h3>
-              <p className="text-slate-400 font-medium text-xs mt-1">---</p>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
-              <ChevronDown className="w-5 h-5" />
-            </div>
-          </div>
-        </div>
+    <section className="w-full max-w-5xl mx-auto px-4 mb-16">
+      <div className="text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+          {t.priceListTitle}
+        </h2>
+        <p className="text-slate-500 text-sm md:text-base mt-2 max-w-lg mx-auto">
+          {t.priceListSub}
+        </p>
       </div>
-    </motion.section>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="glass-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden border-violet-200/60 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-white/80"
+        >
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-500/10 to-transparent rounded-bl-full pointer-events-none" />
+          
+          <div>
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-violet-100 flex items-center justify-center text-violet-600 group-hover:scale-110 transition-transform">
+                <Bot className="w-6 h-6" />
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-violet-600 text-white shadow-md shadow-violet-500/20 uppercase tracking-wide">
+                {t.cat1Title}
+              </span>
+            </div>
+
+            <h3 className="text-xl font-bold text-slate-900 mb-2">{t.cat1Item}</h3>
+            <div className="flex items-baseline gap-1 mb-4">
+              <span className="text-3xl font-extrabold text-violet-600">{t.cat1Price}</span>
+              <span className="text-xs font-semibold text-slate-400">/ project</span>
+            </div>
+
+            <p className="text-slate-600 text-sm leading-relaxed mb-6">
+              {t.cat1Desc}
+            </p>
+
+            <div className="space-y-3 mb-8 pt-6 border-t border-slate-100">
+              <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>{t.feat1}</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>{t.feat2}</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>{t.feat3}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 pt-4">
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Nephyy%20Store,%20saya%20tertarik%20dengan%20Starterpack%20Bot%20Development."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs transition-all shadow-md shadow-emerald-500/20 active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4 fill-white/20" />
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href="https://t.me/username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs transition-all shadow-md shadow-sky-500/20 active:scale-95"
+            >
+              <Send className="w-4 h-4 fill-white/20" />
+              <span>Telegram</span>
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="glass-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden border-dashed border-slate-300 bg-white/40 opacity-80"
+        >
+          <div>
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-slate-200 flex items-center justify-center text-slate-500">
+                <Smartphone className="w-6 h-6" />
+              </div>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                <Lock className="w-3 h-3" />
+                {t.comingSoon}
+              </span>
+            </div>
+
+            <h3 className="text-xl font-bold text-slate-700 mb-2">{t.cat2Item}</h3>
+            <div className="flex items-baseline gap-1 mb-4">
+              <span className="text-3xl font-extrabold text-slate-400">---</span>
+            </div>
+
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              {t.cat2Desc}
+            </p>
+          </div>
+
+          <div className="pt-6 border-t border-slate-200/60">
+            <button
+              disabled
+              className="w-full py-3.5 rounded-xl bg-slate-200 text-slate-400 font-bold text-xs uppercase tracking-wider cursor-not-allowed"
+            >
+              {t.comingSoon}
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
