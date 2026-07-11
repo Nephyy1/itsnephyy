@@ -120,10 +120,13 @@ export default function NephyyStoreLanding() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 text-slate-900 font-sans relative selection:bg-indigo-500 selection:text-white">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-400/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute top-[20%] right-0 w-[600px] h-[600px] bg-violet-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-[30%] w-[550px] h-[550px] bg-blue-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+    <div className="flex flex-col min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 text-slate-900 font-sans relative selection:bg-indigo-500 selection:text-white">
+      
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-0 left-[-10%] md:left-0 w-[500px] h-[500px] bg-cyan-400/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-[20%] right-[-10%] md:right-0 w-[600px] h-[600px] bg-violet-500/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-[30%] w-[550px] h-[550px] bg-blue-500/15 rounded-full blur-3xl" />
+      </div>
 
       <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-sm transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -167,7 +170,7 @@ export default function NephyyStoreLanding() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden absolute w-full bg-white/90 backdrop-blur-2xl border-b border-white/40 px-6 py-6 flex flex-col gap-4 shadow-xl"
+            className="md:hidden absolute w-full bg-white/95 backdrop-blur-2xl border-b border-white/40 px-6 py-6 flex flex-col gap-4 shadow-xl z-50"
           >
             <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-indigo-600">Services</a>
             <a href="#why-us" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-slate-700 hover:text-indigo-600">Why Us</a>
@@ -187,7 +190,7 @@ export default function NephyyStoreLanding() {
         )}
       </header>
 
-      <main className="flex-grow w-full overflow-hidden">
+      <main className="flex-grow w-full">
         <section className="relative pt-16 pb-24 md:pt-28 md:pb-36">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -243,7 +246,7 @@ export default function NephyyStoreLanding() {
                   <motion.div
                     animate={{ y: [0, -12, 0], rotateZ: [0, 1, 0] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute z-20 top-4 left-0 sm:-left-6 p-5 rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/60 shadow-2xl flex items-center gap-4 w-64"
+                    className="absolute z-20 top-4 left-0 sm:-left-6 p-5 rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/60 shadow-2xl flex items-center gap-4 w-[240px] sm:w-64"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 flex-shrink-0">
                       <ShieldCheck className="w-6 h-6" />
@@ -257,7 +260,7 @@ export default function NephyyStoreLanding() {
                   <motion.div
                     animate={{ y: [0, 15, 0], rotateZ: [0, -2, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute z-30 bottom-8 right-0 sm:-right-8 p-5 rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/60 shadow-2xl flex items-center gap-4 w-64"
+                    className="absolute z-30 bottom-8 right-0 sm:-right-8 p-5 rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/60 shadow-2xl flex items-center gap-4 w-[240px] sm:w-64"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 flex-shrink-0">
                       <Zap className="w-6 h-6" />
@@ -271,14 +274,14 @@ export default function NephyyStoreLanding() {
                   <motion.div
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-gradient-to-tr from-blue-600/20 via-indigo-600/20 to-violet-600/20 border border-white/50 backdrop-blur-3xl shadow-inner flex flex-col items-center justify-center p-8 text-center relative overflow-hidden"
+                    className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-blue-600/20 via-indigo-600/20 to-violet-600/20 border border-white/50 backdrop-blur-3xl shadow-inner flex flex-col items-center justify-center p-8 text-center relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent pointer-events-none" />
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-2xl shadow-indigo-500/40 mb-4 z-10">
-                      <Code className="w-10 h-10" />
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-2xl shadow-indigo-500/40 mb-4 z-10">
+                      <Code className="w-8 h-8 sm:w-10 sm:h-10" />
                     </div>
-                    <span className="text-2xl font-black tracking-tight text-slate-900 z-10">Nephyy Tech</span>
-                    <span className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mt-1 z-10">
+                    <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 z-10">Nephyy Tech</span>
+                    <span className="text-[10px] sm:text-xs font-semibold text-indigo-600 uppercase tracking-widest mt-1 z-10">
                       Modern Stack Platform
                     </span>
                   </motion.div>
@@ -325,7 +328,7 @@ export default function NephyyStoreLanding() {
                           </div>
                         ))}
                       </div>
-                      <span className={`text-xs font-bold px-3 py-1 rounded-full shadow-sm ${service.badgeColor}`}>
+                      <span className={`text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-sm ${service.badgeColor}`}>
                         {service.badge}
                       </span>
                     </div>
@@ -439,11 +442,11 @@ export default function NephyyStoreLanding() {
               <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div 
                   whileHover={{ scale: 1.03 }}
-                  className="sm:col-span-2 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 shadow-xl text-white relative overflow-hidden"
+                  className="sm:col-span-2 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 shadow-xl text-white relative overflow-hidden flex flex-col justify-center"
                 >
                   <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+                  <div className="flex items-center gap-4 mb-6 relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
                       <Coins className="w-6 h-6 text-blue-400" />
                     </div>
                     <div>
@@ -451,10 +454,12 @@ export default function NephyyStoreLanding() {
                       <p className="text-slate-400 text-sm">Transfer otomatis ke wallet kami.</p>
                     </div>
                   </div>
-                  <div className="bg-slate-950/50 border border-slate-700/50 rounded-xl p-4 flex items-center justify-between gap-4">
-                    <span className="text-sm font-mono text-slate-300 truncate select-all">
-                      UQCYToGsIma1Zj49KEgGfB9l5a7yBoaC9f1nDlt7GMNLlDdA
-                    </span>
+                  <div className="bg-slate-950/50 border border-slate-700/50 rounded-xl p-4 flex items-center justify-between gap-4 relative z-10">
+                    <div className="flex-1 min-w-0">
+                      <span className="text-sm font-mono text-slate-300 truncate select-all block w-full">
+                        UQCYToGsIma1Zj49KEgGfB9l5a7yBoaC9f1nDlt7GMNLlDdA
+                      </span>
+                    </div>
                     <button 
                       onClick={handleCopyAddress}
                       className="p-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 transition-colors flex-shrink-0"
@@ -491,9 +496,9 @@ export default function NephyyStoreLanding() {
           </div>
         </section>
 
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-20 overflow-hidden">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 p-8 sm:p-14 text-white shadow-2xl relative flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
               
               <div className="max-w-xl text-center md:text-left z-10">
@@ -519,7 +524,7 @@ export default function NephyyStoreLanding() {
         </section>
       </main>
 
-      <footer className="w-full bg-slate-50/80 backdrop-blur-lg border-t border-slate-200/60 pt-16 pb-12">
+      <footer className="w-full bg-slate-50/80 backdrop-blur-lg border-t border-slate-200/60 pt-16 pb-12 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-slate-200 text-center md:text-left">
             <div>
