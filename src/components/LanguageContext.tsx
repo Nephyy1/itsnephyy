@@ -5,17 +5,27 @@ import React, { createContext, useContext, useState } from "react";
 type Language = "ID" | "EN";
 
 type Translations = {
+  badge: string;
   bio: string;
-  orderWa: string;
-  orderTele: string;
   priceListTitle: string;
+  priceListSub: string;
   cat1Title: string;
   cat1Item: string;
   cat1Price: string;
   cat1Desc: string;
+  feat1: string;
+  feat2: string;
+  feat3: string;
+  orderNowWa: string;
+  orderNowTele: string;
   cat2Title: string;
   cat2Item: string;
+  cat2Desc: string;
   comingSoon: string;
+  consultTitle: string;
+  consultSub: string;
+  orderWa: string;
+  orderTele: string;
   paymentTitle: string;
   localPay: string;
   viewQr: string;
@@ -30,17 +40,27 @@ type Translations = {
 
 const dictionary: Record<Language, Translations> = {
   ID: {
-    bio: "Pusat Pembuatan Bot WA & Telegram Terpercaya.",
-    orderWa: "Order via WhatsApp",
-    orderTele: "Order via Telegram",
-    priceListTitle: "Daftar Harga & Layanan",
+    badge: "✨ Pusat Layanan Digital & Bot",
+    bio: "Solusi pengembangan bot WhatsApp & Telegram profesional untuk otomatisasi bisnis dan kebutuhan digital Anda.",
+    priceListTitle: "Katalog Layanan",
+    priceListSub: "Pilih paket pembuatan bot atau produk digital sesuai kebutuhan Anda",
     cat1Title: "Pembuatan Bot",
-    cat1Item: "Starterpack Pembuatan Bot",
+    cat1Item: "Starterpack Bot Development",
     cat1Price: "Rp 50.000",
-    cat1Desc: "Paket dasar pembuatan bot, fitur esensial, cocok untuk pemula.",
-    cat2Title: "Nokos OTP",
+    cat1Desc: "Paket pembuatan bot esensial dengan stabilitas tinggi, sangat cocok untuk pemula maupun operasional bisnis.",
+    feat1: "Integrasi API WhatsApp / Telegram",
+    feat2: "Sistem Respons Otomatis & Cepat",
+    feat3: "Mendukung Kustomisasi Fitur Dasar",
+    orderNowWa: "Pesan via WhatsApp",
+    orderNowTele: "Pesan via Telegram",
+    cat2Title: "Nomor Virtual",
     cat2Item: "Nokos Telegram & WhatsApp",
+    cat2Desc: "Nomor virtual sekali pakai untuk aktivasi OTP dengan tingkat keberhasilan tinggi dan privasi terjaga.",
     comingSoon: "Segera Hadir",
+    consultTitle: "Butuh Bot Kustom atau Fitur Khusus?",
+    consultSub: "Diskusikan ide dan kebutuhan spesifik proyek Anda langsung bersama tim developer kami.",
+    orderWa: "Chat WhatsApp",
+    orderTele: "Chat Telegram",
     paymentTitle: "Metode Pembayaran",
     localPay: "QR Payment (QRIS / e-Wallets)",
     viewQr: "Lihat QRIS",
@@ -49,21 +69,31 @@ const dictionary: Record<Language, Translations> = {
     copied: "Tersalin!",
     close: "Tutup",
     qrTitle: "Pindai untuk Membayar",
-    footerHours: "⚡ Buka Setiap Hari",
+    footerHours: "⚡ Layanan Aktif Setiap Hari",
     rights: "Hak cipta dilindungi undang-undang.",
   },
   EN: {
-    bio: "Trusted WA & Telegram Bot Development Hub.",
-    orderWa: "Order via WhatsApp",
-    orderTele: "Order via Telegram",
-    priceListTitle: "Price List & Services",
+    badge: "✨ Digital & Bot Solutions Hub",
+    bio: "Professional WhatsApp & Telegram bot development services for automating your business and digital needs.",
+    priceListTitle: "Service Catalog",
+    priceListSub: "Choose a bot development package or digital product that fits your scale",
     cat1Title: "Bot Development",
     cat1Item: "Bot Development Starterpack",
     cat1Price: "50k IDR",
-    cat1Desc: "Basic bot development package, essential features, perfect for beginners.",
+    cat1Desc: "Essential bot development package engineered for high stability, perfect for beginners and business operations.",
+    feat1: "WhatsApp / Telegram API Integration",
+    feat2: "Fast & Automated Response System",
+    feat3: "Supports Basic Feature Customization",
+    orderNowWa: "Order via WhatsApp",
+    orderNowTele: "Order via Telegram",
     cat2Title: "Virtual Numbers",
     cat2Item: "Telegram & WhatsApp Nokos",
+    cat2Desc: "Disposable virtual numbers for OTP verification with high success rates and guaranteed privacy.",
     comingSoon: "Coming Soon",
+    consultTitle: "Need a Custom Bot or Advanced Features?",
+    consultSub: "Discuss your project ideas and specific technical requirements directly with our development team.",
+    orderWa: "Chat WhatsApp",
+    orderTele: "Chat Telegram",
     paymentTitle: "Payment Methods",
     localPay: "QR Payment (QRIS / e-Wallets)",
     viewQr: "View QRIS",
@@ -72,7 +102,7 @@ const dictionary: Record<Language, Translations> = {
     copied: "Copied!",
     close: "Close",
     qrTitle: "Scan to Pay",
-    footerHours: "⚡ Open Daily",
+    footerHours: "⚡ Open Daily for Service",
     rights: "All rights reserved.",
   },
 };
