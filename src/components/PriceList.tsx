@@ -2,7 +2,8 @@
 
 import { useLanguage } from "./LanguageContext";
 import { motion } from "framer-motion";
-import { Bot, Smartphone, CheckCircle2, Lock, MessageCircle, Send, LayoutTemplate, Sparkles } from "lucide-react";
+import { Bot, Smartphone, CheckCircle2, Lock, LayoutTemplate, Sparkles } from "lucide-react";
+import { WhatsAppIcon, TelegramIcon } from "./BrandIcons";
 
 export default function PriceList() {
   const { t } = useLanguage();
@@ -68,21 +69,21 @@ export default function PriceList() {
 
           <div className="grid grid-cols-2 gap-2 pt-2">
             <a
-              href="https://wa.me/6281234567890?text=Halo%20Nephyy%20Store,%20saya%20tertarik%20dengan%20Starterpack%20Bot."
+              href="https://wa.me/6281533331355?text=Halo%20Nephyy%20Store,%20saya%20tertarik%20dengan%20Starterpack%20Bot."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs transition-all shadow-md active:scale-95"
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1ea952] text-white font-bold text-xs transition-all shadow-md shadow-[#25D366]/20 active:scale-95"
             >
-              <MessageCircle className="w-4 h-4 fill-white/20" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://t.me/username"
+              href="https://t.me/zxeexoxee"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs transition-all shadow-md active:scale-95"
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#2AABEE] hover:bg-[#2289bf] text-white font-bold text-xs transition-all shadow-md shadow-[#2AABEE]/20 active:scale-95"
             >
-              <Send className="w-4 h-4 fill-white/20" />
+              <TelegramIcon className="w-4 h-4" />
               <span>Telegram</span>
             </a>
           </div>
@@ -133,21 +134,21 @@ export default function PriceList() {
 
           <div className="grid grid-cols-2 gap-2 pt-2">
             <a
-              href="https://wa.me/6281234567890?text=Halo%20Nephyy%20Store,%20saya%20tertarik%20dengan%20Jasa%20Pembuatan%20Website."
+              href="https://wa.me/6281533331355?text=Halo%20Nephyy%20Store,%20saya%20tertarik%20dengan%20Jasa%20Pembuatan%20Website."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs transition-all shadow-md active:scale-95"
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1ea952] text-white font-bold text-xs transition-all shadow-md shadow-[#25D366]/20 active:scale-95"
             >
-              <MessageCircle className="w-4 h-4 fill-white/20" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://t.me/username"
+              href="https://t.me/zxeexoxee"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs transition-all shadow-md active:scale-95"
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#2AABEE] hover:bg-[#2289bf] text-white font-bold text-xs transition-all shadow-md shadow-[#2AABEE]/20 active:scale-95"
             >
-              <Send className="w-4 h-4 fill-white/20" />
+              <TelegramIcon className="w-4 h-4" />
               <span>Telegram</span>
             </a>
           </div>
