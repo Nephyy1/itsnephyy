@@ -2,58 +2,52 @@
 
 import { useLanguage } from "./LanguageContext";
 import { motion } from "framer-motion";
-import { MessageCircle, Send } from "lucide-react";
+import { MessageCircle, Send, Headphones } from "lucide-react";
 
 export default function QuickActions() {
   const { t } = useLanguage();
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   return (
     <motion.section
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="w-full max-w-md mx-auto px-4 mb-10 flex flex-col gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      className="w-full max-w-4xl mx-auto px-4 mb-16"
     >
-      <motion.a
-        variants={item}
-        href="https://wa.me/6281234567890"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
-        className="group relative flex items-center justify-center gap-3 w-full py-4 px-6 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 animate-pulse-slow"
-      >
-        <MessageCircle className="w-5 h-5 fill-white/20" />
-        <span>{t.orderWa}</span>
-      </motion.a>
+      <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-8 md:p-10 text-white shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
+        <div className="absolute -right-10 -top-10 w-40 h-40 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="flex items-center gap-5 text-center md:text-left z-10">
+          <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center shrink-0 mx-auto md:mx-0 backdrop-blur-md">
+            <Headphones className="w-7 h-7 text-violet-400 animate-pulse" />
+          </div>
+          <div>
+            <h3 className="text-lg md:text-xl font-bold tracking-tight">{t.consultTitle}</h3>
+            <p className="text-slate-400 text-xs md:text-sm mt-1 max-w-md">{t.consultSub}</p>
+          </div>
+        </div>
 
-      <motion.a
-        variants={item}
-        href="https://t.me/username"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
-        className="group relative flex items-center justify-center gap-3 w-full py-4 px-6 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 animate-pulse-slow"
-      >
-        <Send className="w-5 h-5 fill-white/20" />
-        <span>{t.orderTele}</span>
-      </motion.a>
+        <div className="flex items-center gap-3 w-full md:w-auto shrink-0 z-10">
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs md:text-sm transition-all shadow-lg shadow-emerald-500/20"
+          >
+            <MessageCircle className="w-4 h-4 fill-white/20" />
+            <span>{t.orderWa}</span>
+          </a>
+          <a
+            href="https://t.me/username"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 md:flex-initial flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs md:text-sm transition-all shadow-lg shadow-sky-500/20"
+          >
+            <Send className="w-4 h-4 fill-white/20" />
+            <span>{t.orderTele}</span>
+          </a>
+        </div>
+      </div>
     </motion.section>
   );
 }
